@@ -4,6 +4,8 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./test-service:/app  # Mount local directory to container
+      - ./test-service:/service  # Mount the source code for live-reloading
+      - /service/target/classes  # Mount the compiled classes for hot reload
     environment:
       - JAVA_OPTS=-Xmx512m
+    command: mvn spring-boot:run  # Command to trigger Spring Boot with DevTools

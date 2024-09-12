@@ -12,6 +12,6 @@ public class RestMainController {
     @GetMapping("/test")
     public String test(){
         logger.info("Test called");
-        return "testing suceess";
+        return "testing is live ok ok";
     }
 }
