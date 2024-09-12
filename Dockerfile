@@ -7,6 +7,9 @@ WORKDIR /service
 COPY test-service/pom.xml ./
 RUN mvn dependency:go-offline
 
+# Running mvn dependency:go-offline downloads all the required dependencies based on the pom.xml.
+# Since Docker caches each layer, if the pom.xml does not change, Docker will use the cached result of this step the next time it builds the container.
+
 # Stage 2: Runtime container with source code
 FROM amazoncorretto:21-alpine
 

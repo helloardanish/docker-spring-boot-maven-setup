@@ -12,6 +12,6 @@ public class RestMainController {
     @GetMapping("/test")
     public String test(){
         logger.info("Test called");
-        return "testing is live ok ok";
+        return "testing is live ok ok test without building it works right just re run the command docker compose up. Yeah and also run pretty fast as dependency is taken from cache";
     }
 }
